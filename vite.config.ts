@@ -5,7 +5,7 @@ import svgr from "vite-plugin-svgr";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
-  const { PUBLIC_URL } = env;
+  const { PUBLIC_URL, PUBLIC_KEY, PRIVATE_KEY, API_URL } = env;
 
   return {
     base: PUBLIC_URL,
@@ -24,6 +24,9 @@ export default defineConfig(({ mode }) => {
     },
     define: {
       __PUBLIC_URL__: JSON.stringify(PUBLIC_URL),
+      __PUBLIC_KEY__: JSON.stringify(PUBLIC_KEY),
+      __PRIVATE_KEY__: JSON.stringify(PRIVATE_KEY),
+      __API_URL__: JSON.stringify(API_URL),
     },
   };
 });
