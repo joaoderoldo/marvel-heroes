@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const TableRowWrapper = styled.div`
   display: flex;
@@ -10,7 +10,13 @@ export const TableRowWrapper = styled.div`
   border-radius: 5px;
   padding: 16px 24px;
 
-  & + .table-row {
+  ${({ clickable }) =>
+    clickable &&
+    css`
+      cursor: pointer;
+    `}
+
+  & + & {
     margin-top: 8px;
   }
 

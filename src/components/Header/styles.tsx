@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
-export const Container = styled.header`
+export const HeaderWrapper = styled.header`
   background-color: var(--white-color, #fff);
   height: 65px;
-  padding: 16px 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 16px 0;
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   .user {
     display: flex;
