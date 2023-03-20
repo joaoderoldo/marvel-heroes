@@ -9,6 +9,8 @@ const Variables = css`
     color: var(--black, black);
     color-scheme: light dark;
 
+    background-color: var(---bg-base, #fff);
+
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -16,12 +18,13 @@ const Variables = css`
     -webkit-text-size-adjust: 100%;
 
     --black: #000;
-    --white-color: #fff;
+    --white: #fff;
     --primary: #6dc6f8;
     --primary-dark: #247dd0;
     --secondary: #404040;
     --secondary-light: #565656;
     --bg-base: #f7f7f7;
+    --red: #ff1e1e;
 
     --font-family: "Epilogue", sans-serif;
   }
