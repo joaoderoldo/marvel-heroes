@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const HomeWrapper = styled.main`
   background-color: var(--bg-base, #eee);
+  padding-top: 32px;
 
   .characters-name {
     img {
