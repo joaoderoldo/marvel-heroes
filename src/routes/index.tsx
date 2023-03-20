@@ -1,12 +1,12 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 
-const Home = React.lazy(() => import("@/pages/Home/Home"));
+const Heroes = React.lazy(() => import("@/pages/Heroes/Heroes"));
 
 const Routes = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Heroes />,
     errorElement: <div>404</div>,
   },
 ]);

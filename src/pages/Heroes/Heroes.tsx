@@ -16,7 +16,7 @@ const TableData = [
   },
 ];
 
-const Home = () => {
+const Heroes = () => {
   return (
     <DefaultLayout>
       <S.HomeWrapper>
@@ -80,4 +80,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Heroes;
