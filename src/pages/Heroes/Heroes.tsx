@@ -1,8 +1,18 @@
 import { DefaultLayout } from "@/layouts";
 
+import { useNavigate } from "react-router-dom";
+
 import * as S from "./styles";
 import { ReactComponent as SearchIcon } from "@/assets/svgs/search-icon.svg";
 import { Container, Table, Pagination } from "@/components";
+
+import { getHeroes } from "@/proxy/Heroes";
+
+import {
+  getHeroeSeries,
+  getHeroePicture,
+  getHeroeEvents,
+} from "@/utils/getCorrectHeroesData";
 
 const TableData = [
   {
@@ -17,6 +27,11 @@ const TableData = [
 ];
 
 const Heroes = () => {
+  const navigate = useNavigate();
+  const { data: heroes, isLoading: isGetHeroesLoading } = getHeroes();
+
+  if (isGetHeroesLoading) return <div>Carregando...</div>;
+
   return (
     <DefaultLayout>
       <S.HomeWrapper>
@@ -39,36 +54,40 @@ const Heroes = () => {
               </div>
             </div>
           </S.HomeHeading>
-          <Table.Table>
+          <Table.Table className="heroes-table">
             <Table.TableHeader>
               {TableData.map((item, index) => (
                 <Table.TableCol key={index}>{item.label}</Table.TableCol>
               ))}
             </Table.TableHeader>
-            {[1, 2, 3, 4, 5, 6, 7].map((item) => (
-              <Table.TableRow clickable>
+            {heroes?.data?.results.map((heroe) => (
+              <Table.TableRow
+                key={heroe.id}
+                className="heroes-item"
+                onClick={() => navigate(`/heroe/${heroe.id}`)}
+                clickable
+              >
                 <Table.TableCol
                   data-label="Personagem"
                   className="characters-name"
                 >
-                  <img src="https://placeimg.com/44/44/nature" alt="" />
-                  <span>3-D Man</span>
+                  {getHeroePicture({
+                    picture: heroe?.thumbnail.path,
+                    name: heroe?.name,
+                  })}
+                  <span>{heroe.name}</span>
                 </Table.TableCol>
                 <Table.TableCol
                   data-label="Séries"
                   className="characters-series"
                 >
-                  Avengers: The Initiative (2007 - 2010)
-                  <br />
-                  Deadpool (1997 - 2002)
-                  <br />
-                  Marvel Premiere (1972 - 1981)
+                  {getHeroeSeries(heroe?.series)}
                 </Table.TableCol>
                 <Table.TableCol
                   data-label="Eventos"
                   className="characters-events"
                 >
-                  Secret Invasion
+                  {getHeroeEvents(heroe?.events)}
                 </Table.TableCol>
               </Table.TableRow>
             ))}

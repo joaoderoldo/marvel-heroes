@@ -26,8 +26,30 @@ export const HomeWrapper = styled.main`
     font-size: 0.875rem;
   }
 
+  .characters-series {
+    flex-flow: column wrap;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+
   .pagination {
     margin-top: 78px;
+  }
+
+  .heroes-table {
+    &:hover {
+      .heroes-item {
+        opacity: 0.4;
+      }
+    }
+  }
+
+  .heroes-item {
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 1 !important;
+    }
   }
 `;
 
