@@ -113,7 +113,6 @@ const Heroes = () => {
                   key={hero.id}
                   classes="heroes-item"
                   onClick={() => navigate(`/hero/${hero.id}`)}
-                  clickable
                 >
                   <Table.TableCol
                     dataLabel="Personagem"
