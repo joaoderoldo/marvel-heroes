@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NotFoundHeroes component > should render correctly with props 1`] = `
+<div
+  class="sc-gueYoa gEcUkb not-found-heroes"
+>
+  <h1>
+    Não encotramos um herói com a busca: 
+    <span>
+      Spiderman
+    </span>
+  </h1>
+  <button>
+    Voltar
+  </button>
+</div>
+`;
