@@ -2,7 +2,7 @@ import * as S from "./styles";
 
 import { Container } from "@/components";
 import { getHeroe } from "@/proxy/Heroe";
-import { getHeroes } from "@/proxy/Heroes";
+import { getEvents } from "@/proxy/Events";
 
 import { useParams } from "react-router-dom";
 import {
@@ -10,22 +10,31 @@ import {
   getHeroeDescription,
 } from "@/utils/getCorrectHeroesData";
 
+import { DefaultLayout } from "@/layouts";
+
 const Heroe = () => {
-  const { heroId } = useParams();
-  const { data: heroData, isLoading: isGetHeroeLoading } = getHeroe({ heroId });
-  const { data: heroesData, isLoading: isGetHeroesLoading } = getHeroes();
+  const { heroeId } = useParams();
+  const { data: heroeData, isLoading: isGetHeroeLoading } = getHeroe({
+    heroeId,
+  });
 
-  const heroe = heroData?.data?.results[0];
-  const heroes = heroesData?.data.results;
+  const { data: heroeEvents, isLoading: isGetHeroeEventsLoading } = getEvents({
+    heroeId,
+    params: { limit: 8, characters: heroeId },
+  });
 
-  if (isGetHeroeLoading && isGetHeroesLoading) return <div>Carregando...</div>;
+  const heroe = heroeData?.data?.results[0];
+  const events = heroeEvents?.data?.results;
+
+  if (isGetHeroeLoading || isGetHeroeEventsLoading)
+    return <div>Carregando...</div>;
 
   return (
-    <>
+    <DefaultLayout>
       <S.HeroesHeading>
         <div className="heroe-picture">
           {getHeroePicture({
-            picture: heroe?.thumbnail.path,
+            picture: heroe?.thumbnail,
             name: heroe?.name,
             noImgSize: "large",
           })}
@@ -41,10 +50,10 @@ const Heroe = () => {
         <Container>
           <h3 className="page-title">Eventos</h3>
           <div className="heroe-list">
-            {heroes.map((heroeItem) => (
+            {events?.map((heroeItem) => (
               <div className="heroe-item">
                 {getHeroePicture({
-                  picture: heroeItem?.thumbnail.path,
+                  picture: heroeItem?.thumbnail,
                   name: heroeItem?.name,
                   noImgSize: "medium",
                   className: "heroe-picture",
@@ -60,7 +69,7 @@ const Heroe = () => {
           </div>
         </Container>
       </S.HeroEvents>
-    </>
+    </DefaultLayout>
   );
 };
 

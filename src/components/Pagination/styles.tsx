@@ -26,7 +26,8 @@ export const PaginationItem = styled.div`
   align-items: center;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &.active {
     background-color: var(--primary-dark, black);
     color: var(--white, #fff);
   }

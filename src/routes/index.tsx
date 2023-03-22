@@ -3,15 +3,16 @@ import { createBrowserRouter } from "react-router-dom";
 
 const Heroes = React.lazy(() => import("@/pages/Heroes/Heroes"));
 const Heroe = React.lazy(() => import("@/pages/Heroe/Heroe"));
+const NotFound = React.lazy(() => import("@/pages/NotFound/NotFound"));
 
 const Routes = createBrowserRouter([
   {
     path: "/",
     element: <Heroes />,
-    errorElement: <div>404</div>,
+    errorElement: <NotFound />,
   },
   {
-    path: "heroe/:heroId",
+    path: "heroe/:heroeId",
     element: <Heroe />,
   },
 ]);

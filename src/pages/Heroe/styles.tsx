@@ -67,7 +67,8 @@ export const HeroEvents = styled.section`
 
       .heroe-picture {
         max-width: 265px;
-        height: auto;
+        height: 265px;
+        margin: 0 auto;
         object-fit: cover;
         display: block;
       }
@@ -87,8 +88,8 @@ export const HeroEvents = styled.section`
         }
 
         .heroe-about {
-          font-size: 0.75rem;
-          line-height: 0.75rem;
+          font-size: 0.8rem;
+          line-height: 0.8rem;
           margin-top: auto;
           display: block;
         }

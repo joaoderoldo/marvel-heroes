@@ -16,7 +16,7 @@ export const getHeroePicture = ({
 }) => {
   return (
     <img
-      src={picture}
+      src={`${picture?.path}.${picture?.extension}`}
       alt={name}
       onError={(e: any) => (e.target.src = heroPictures[noImgSize])}
       className={className}

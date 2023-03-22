@@ -37,6 +37,8 @@ export const HomeWrapper = styled.main`
   }
 
   .heroes-table {
+    margin-bottom: 32px;
+
     &:hover {
       .heroes-item {
         opacity: 0.4;
@@ -49,6 +51,32 @@ export const HomeWrapper = styled.main`
 
     &:hover {
       opacity: 1 !important;
+    }
+  }
+
+  .not-found-heroes {
+    min-height: calc(100vh - 98px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+
+    h1 {
+      text-align: center;
+
+      span {
+        display: block;
+        color: var(--red, red);
+      }
+    }
+
+    button {
+      padding: 12px 24px;
+      cursor: pointer;
+      background-color: var(--primary, #0fc0fc);
+      border: none;
+      border-radius: 5px;
+      color: var(--black, #000);
     }
   }
 `;
