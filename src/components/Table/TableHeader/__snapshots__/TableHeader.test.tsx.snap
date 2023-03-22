@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TableHeader > should render the component 1`] = `
+<div
+  class="sc-beqWaB gVbdkJ table-header"
+>
+  <div
+    class="sc-gueYoa fnNkuk"
+  >
+    Personagem
+  </div>
+  <div
+    class="sc-gueYoa fnNkuk"
+  >
+    Séries
+  </div>
+  <div
+    class="sc-gueYoa fnNkuk"
+  >
+    Eventos
+  </div>
+</div>
+`;
