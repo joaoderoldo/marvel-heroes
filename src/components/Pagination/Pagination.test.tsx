@@ -1,5 +1,5 @@
 import { vi } from "vitest";
-import { render, fireEvent, getByText, waitFor } from "@testing-library/react";
+import { render, fireEvent, waitFor } from "@testing-library/react";
 import Pagination from "./Pagination";
 
 describe("Pagination", () => {
