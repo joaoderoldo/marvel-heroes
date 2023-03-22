@@ -8,7 +8,7 @@ interface TableHeaderMock {
 }
 
 const TableHeaderMock = ({ onClick }: TableHeaderMock) => (
-  <TableRow classes="table-row" onClick={onClick}>
+  <TableRow classes="table-row" onClick={onClick} key="1">
     <TableCol>Personagem</TableCol>
     <TableCol>Séries</TableCol>
     <TableCol>Eventos</TableCol>
