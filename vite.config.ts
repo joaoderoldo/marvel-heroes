@@ -1,3 +1,6 @@
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import svgr from "vite-plugin-svgr";
@@ -27,6 +30,12 @@ export default defineConfig(({ mode }) => {
       __PUBLIC_KEY__: JSON.stringify(PUBLIC_KEY),
       __PRIVATE_KEY__: JSON.stringify(PRIVATE_KEY),
       __API_URL__: JSON.stringify(API_URL),
+    },
+    test: {
+      globals: true,
+      environment: "jsdom",
+      setupFiles: "./src/tests/setup.ts",
+      css: true,
     },
   };
 });
