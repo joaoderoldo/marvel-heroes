@@ -11,7 +11,7 @@ const TableMock = () => (
       <TableCol>Séries</TableCol>
       <TableCol>Eventos</TableCol>
     </TableHeader>
-    <TableRow classes="table-row">
+    <TableRow classes="table-row" key="1">
       <TableCol>Personagem Teste</TableCol>
       <TableCol>Serie Teste</TableCol>
       <TableCol>Evento Teste</TableCol>
