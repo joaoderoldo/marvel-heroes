@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Container > renders Container component correctly and match snapshop 1`] = `null`;
+
+exports[`Container > renders Container component correctly and match snapshop with applied class 1`] = `null`;
