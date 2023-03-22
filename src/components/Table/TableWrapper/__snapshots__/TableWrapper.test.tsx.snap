@@ -1,0 +1,46 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TableWrapper > renders component correctly 1`] = `
+<div
+  class="sc-beqWaB jlBTvX table-wrapper"
+>
+  <div
+    class="sc-gueYoa kOOxlT table-header"
+  >
+    <div
+      class="sc-hLseeU dFXXYa"
+    >
+      Personagem
+    </div>
+    <div
+      class="sc-hLseeU dFXXYa"
+    >
+      Séries
+    </div>
+    <div
+      class="sc-hLseeU dFXXYa"
+    >
+      Eventos
+    </div>
+  </div>
+  <div
+    class="sc-dmqHEX jqRwhR table-row"
+  >
+    <div
+      class="sc-hLseeU dFXXYa"
+    >
+      Personagem Teste
+    </div>
+    <div
+      class="sc-hLseeU dFXXYa"
+    >
+      Serie Teste
+    </div>
+    <div
+      class="sc-hLseeU dFXXYa"
+    >
+      Evento Teste
+    </div>
+  </div>
+</div>
+`;
