@@ -10,8 +10,8 @@ export const TableRowWrapper = styled.div`
   border-radius: 5px;
   padding: 16px 24px;
 
-  ${({ clickable }) =>
-    clickable &&
+  ${({ onClick }) =>
+    onClick &&
     css`
       cursor: pointer;
     `}

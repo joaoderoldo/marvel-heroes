@@ -1,13 +1,20 @@
-import { useState, useEffect } from "react";
-import { PaginationWrapper, PaginationItem } from "./styles";
-import { fetchPageNumbers } from "@/components/Pagination/utils/helperPagination";
-import { Container } from "@/components";
-import { useCallback } from "react";
+import clsx from "clsx";
+import { FC, useCallback, useEffect, useState } from "react";
 
-const Pagination = ({ totalPages, handleOffset, ...props }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const pageNeighbours = Math.max(1, Math.min(0, 2));
-  const [pages, setPages] = useState([]);
+import { Container } from "@/components";
+import { fetchPageNumbers } from "@/components/Pagination/utils/helperPagination";
+
+import { PaginationItem, PaginationWrapper } from "./styles";
+import { PaginationProps } from "./types";
+
+const Pagination: FC<PaginationProps> = ({
+  totalPages,
+  handleOffset,
+  classes,
+}) => {
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [pages, setPages] = useState<Array<string | number>>([]);
+  const pageNeighbours: number = Math.max(1, Math.min(0, 2));
 
   useEffect(() => {
     if (!Number.isNaN(totalPages) && currentPage === 1) {
@@ -23,7 +30,7 @@ const Pagination = ({ totalPages, handleOffset, ...props }) => {
 
   const goToPage = useCallback(
     (page: number) => {
-      const current = Math.max(0, Math.min(page, totalPages));
+      const current: number = Math.max(0, Math.min(page, totalPages));
       const paginationData = fetchPageNumbers({
         currentPage: current,
         totalPages,
@@ -31,15 +38,15 @@ const Pagination = ({ totalPages, handleOffset, ...props }) => {
       });
       setPages(paginationData);
       setCurrentPage(current);
-      const offsetValue = (page - 1) * 7;
+      const offsetValue: number = (page - 1) * 7;
       handleOffset(offsetValue);
     },
-    [pageNeighbours, totalPages]
+    [handleOffset, pageNeighbours, totalPages]
   );
 
   return (
-    <PaginationWrapper {...props}>
-      <Container className="pagination-container">
+    <PaginationWrapper className={clsx(classes)}>
+      <Container classes="pagination-container">
         {pages.length &&
           pages.map((page) => {
             if (page === "LEFT") {

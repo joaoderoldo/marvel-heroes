@@ -17,7 +17,6 @@ const Hero = () => {
   const { data: heroData, isLoading: isGetHeroLoading } = getHero({
     heroId,
   });
-
   const { data: heroEvents, isLoading: isGetHeroEventsLoading } = getEvents({
     heroId,
     params: { limit: 8, characters: heroId },
@@ -49,22 +48,28 @@ const Hero = () => {
         <Container>
           <h3 className="page-title">Eventos</h3>
           <div className="hero-list">
-            {events?.map((event) => (
-              <div className="hero-item">
-                {getHeroPicture({
-                  picture: event?.thumbnail,
-                  name: event?.name,
-                  noImgSize: "medium",
-                  className: "hero-picture",
-                })}
-                <div className="hero-content">
-                  <h4 className="hero-name">{event?.name}</h4>
-                  <span className="hero-about">
-                    {getHeroDescription(event?.description)}
-                  </span>
+            {events?.map(
+              (event: {
+                thumbnail: { path: string; extension: string };
+                name: string;
+                description: string;
+              }) => (
+                <div className="hero-item">
+                  {getHeroPicture({
+                    picture: event?.thumbnail,
+                    name: event?.name,
+                    noImgSize: "medium",
+                    className: "hero-picture",
+                  })}
+                  <div className="hero-content">
+                    <h4 className="hero-name">{event?.name}</h4>
+                    <span className="hero-about">
+                      {getHeroDescription(event?.description)}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            )}
           </div>
         </Container>
       </HeroEvents>

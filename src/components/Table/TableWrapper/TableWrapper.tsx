@@ -1,7 +1,15 @@
-import { TableWrapperWrapper } from "./styles";
+import clsx from "clsx";
+import { FC } from "react";
 
-const TableWrapper = ({ children, ...props }) => {
-  return <TableWrapperWrapper {...props}>{children}</TableWrapperWrapper>;
+import { TableWrapperWrapper } from "./styles";
+import { TableWrapperProps } from "./types";
+
+const TableWrapper: FC<TableWrapperProps> = ({ children, classes }) => {
+  return (
+    <TableWrapperWrapper className={clsx(classes)}>
+      {children}
+    </TableWrapperWrapper>
+  );
 };
 
 export { TableWrapper };

@@ -20,15 +20,27 @@ import {
 } from "@/utils/getCorrectHeroesData";
 import { useState } from "react";
 
+type Hero = {
+  id: number;
+  name: string;
+  thumbnail: { path: string; extension: string };
+  series: { items: { name: string }[]; available: number };
+  events: { items: { name: string }[]; available: number };
+};
+
 const Heroes = () => {
-  const [params, setParams] = useState({ limit: 7, offset: 0 });
+  const [params, setParams] = useState<{
+    limit: number;
+    offset: number;
+    nameStartsWith?: string;
+  }>({ limit: 7, offset: 0 });
   const [search, setSearch] = useState("");
 
   const { data: heroes, isLoading: isGetHeroesLoading } = getHeroes({ params });
   const navigate = useNavigate();
   const totalPages = Math.ceil(heroes?.data.total / heroes?.data.count);
 
-  const handleOffset = (offset) => {
+  const handleOffset = (offset: number) => {
     setParams((prevState) => ({ ...prevState, offset }));
   };
 
@@ -42,7 +54,7 @@ const Heroes = () => {
     });
   };
 
-  const handleSearch = (search) => {
+  const handleSearch = (search: string) => {
     setSearch(search);
 
     if (!search) {
@@ -90,22 +102,22 @@ const Heroes = () => {
                 </div>
               </div>
             </HomeHeading>
-            <Table.Table className="heroes-table">
+            <Table.Table classes="heroes-table">
               <Table.TableHeader>
                 <Table.TableCol>Personagem</Table.TableCol>
                 <Table.TableCol>Séries</Table.TableCol>
                 <Table.TableCol>Eventos</Table.TableCol>
               </Table.TableHeader>
-              {heroes?.data.results.map((hero) => (
+              {heroes?.data.results.map((hero: Hero) => (
                 <Table.TableRow
                   key={hero.id}
-                  className="heroes-item"
+                  classes="heroes-item"
                   onClick={() => navigate(`/hero/${hero.id}`)}
                   clickable
                 >
                   <Table.TableCol
-                    data-label="Personagem"
-                    className="characters-name"
+                    dataLabel="Personagem"
+                    classes="characters-name"
                   >
                     {getHeroPicture({
                       picture: hero?.thumbnail,
@@ -114,14 +126,14 @@ const Heroes = () => {
                     <span>{hero.name}</span>
                   </Table.TableCol>
                   <Table.TableCol
-                    data-label="Séries"
-                    className="characters-series"
+                    dataLabel="Séries"
+                    classes="characters-series"
                   >
                     {getHeroSeries(hero?.series)}
                   </Table.TableCol>
                   <Table.TableCol
-                    data-label="Eventos"
-                    className="characters-events"
+                    dataLabel="Eventos"
+                    classes="characters-events"
                   >
                     {getHeroEvents(hero?.events)}
                   </Table.TableCol>
@@ -133,7 +145,7 @@ const Heroes = () => {
         <Pagination
           totalPages={totalPages}
           handleOffset={handleOffset}
-          className="pagination"
+          classes="pagination"
         />
       </HomeWrapper>
     </DefaultLayout>

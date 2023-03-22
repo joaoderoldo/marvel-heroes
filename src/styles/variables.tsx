@@ -7,7 +7,6 @@ const Variables = css`
     font-size: 16px;
 
     color: var(--black, black);
-    color-scheme: light dark;
 
     background-color: var(---bg-base, #fff);
 

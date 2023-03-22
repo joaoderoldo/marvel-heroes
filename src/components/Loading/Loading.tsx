@@ -1,6 +1,6 @@
-import { LoadingContainer } from "./styles";
-
 import LoadingAnimation from "@/assets/gifs/hero-loading.gif";
+
+import { LoadingContainer } from "./styles";
 
 const Loading = () => {
   return (

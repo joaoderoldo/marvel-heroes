@@ -1,7 +1,20 @@
-import { TableRowWrapper } from "./styles";
+import clsx from "clsx";
+import { FC } from "react";
 
-const TableRow = ({ children, ...props }) => {
-  return <TableRowWrapper {...props}>{children}</TableRowWrapper>;
+import { TableRowWrapper } from "./styles";
+import { TableRowProps } from "./types";
+
+const TableRow: FC<TableRowProps> = ({
+  children,
+  classes,
+  onClick,
+  clickable,
+}) => {
+  return (
+    <TableRowWrapper className={clsx(classes)} onClick={onClick}>
+      {children}
+    </TableRowWrapper>
+  );
 };
 
 export default TableRow;

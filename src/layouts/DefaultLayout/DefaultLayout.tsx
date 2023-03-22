@@ -1,6 +1,10 @@
+import { FC } from "react";
+
 import { Header } from "@/components";
 
-const DefaultLayout = ({ children }) => {
+import { DefaultLayoutProps } from "./types";
+
+const DefaultLayout: FC<DefaultLayoutProps> = ({ children }) => {
   return (
     <>
       <Header />

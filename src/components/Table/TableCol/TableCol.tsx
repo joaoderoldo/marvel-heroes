@@ -1,7 +1,15 @@
-import { TableColWrapper } from "./styles";
+import clsx from "clsx";
+import { FC } from "react";
 
-const TableCol = ({ children, ...props }) => {
-  return <TableColWrapper {...props}>{children}</TableColWrapper>;
+import { TableColWrapper } from "./styles";
+import { TableColProps } from "./types";
+
+const TableCol: FC<TableColProps> = ({ children, classes, dataLabel }) => {
+  return (
+    <TableColWrapper className={clsx(classes)} data-label={dataLabel}>
+      {children}
+    </TableColWrapper>
+  );
 };
 
 export default TableCol;

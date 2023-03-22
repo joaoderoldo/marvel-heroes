@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-import * as S from "./styles";
 import { ReactComponent as Logo } from "@/assets/svgs/neural-med-logo.svg";
-
 import { Container } from "@/components";
 import { getInitialLetters } from "@/utils";
+
+import { HeaderWrapper } from "./styles";
 
 const userInfo = {
   name: "João Vitor",
@@ -13,8 +13,8 @@ const userInfo = {
 
 const Header = () => {
   return (
-    <S.HeaderWrapper>
-      <Container className="header-container">
+    <HeaderWrapper>
+      <Container classes="header-container">
         <Link to="/">
           <Logo />
         </Link>
@@ -26,7 +26,7 @@ const Header = () => {
           <div className="user-avatar">{getInitialLetters(userInfo.name)}</div>
         </div>
       </Container>
-    </S.HeaderWrapper>
+    </HeaderWrapper>
   );
 };
 
