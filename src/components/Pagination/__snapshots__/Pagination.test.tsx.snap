@@ -1,0 +1,53 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Pagination > should render the component 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-iAEyYk dpWWQo"
+  >
+    <div
+      class="sc-gueYoa gEcUkb pagination-container"
+    >
+      <div
+        class="sc-fsQiph kqgSP  active"
+      >
+        1
+      </div>
+      <div
+        class="sc-fsQiph kqgSP"
+      >
+        2
+      </div>
+      <div
+        class="sc-fsQiph kqgSP"
+      >
+        3
+      </div>
+      <div
+        class="sc-fsQiph kqgSP"
+      >
+        4
+      </div>
+      <div
+        class="sc-fsQiph kqgSP"
+      >
+        5
+      </div>
+      <div
+        class="sc-fsQiph kqgSP"
+      >
+        <span
+          aria-hidden="true"
+        >
+          »
+        </span>
+      </div>
+      <div
+        class="sc-fsQiph kqgSP"
+      >
+        10
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
