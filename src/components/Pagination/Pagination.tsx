@@ -4,7 +4,7 @@ import { fetchPageNumbers } from "@/components/Pagination/utils/helperPagination
 import { Container } from "@/components";
 import { useCallback } from "react";
 
-const Pagination = ({ totalPages, handleOffset, isHidden, ...props }) => {
+const Pagination = ({ totalPages, handleOffset, ...props }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const pageNeighbours = Math.max(1, Math.min(0, 2));
   const [pages, setPages] = useState([]);
@@ -36,8 +36,6 @@ const Pagination = ({ totalPages, handleOffset, isHidden, ...props }) => {
     },
     [pageNeighbours, totalPages]
   );
-
-  if (isHidden) return null;
 
   return (
     <PaginationWrapper {...props}>

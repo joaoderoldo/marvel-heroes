@@ -8,7 +8,7 @@ const heroPictures = {
   large: NoImageLarge,
 };
 
-export const getHeroePicture = ({
+export const getHeroPicture = ({
   picture,
   name,
   className,
@@ -24,7 +24,7 @@ export const getHeroePicture = ({
   );
 };
 
-export const getHeroeSeries = (series, limit = 3) => {
+export const getHeroSeries = (series, limit = 3) => {
   if (!series.available) return "Esse Herói não possui nenhuma série :(";
 
   const serie = series.items.map(
@@ -34,7 +34,7 @@ export const getHeroeSeries = (series, limit = 3) => {
   return serie;
 };
 
-export const getHeroeEvents = (events, limit = 1) => {
+export const getHeroEvents = (events, limit = 1) => {
   if (!events.available) return "Esse Herói não possui nenhuma evento :(";
 
   const serie = events.items.map(
@@ -44,7 +44,7 @@ export const getHeroeEvents = (events, limit = 1) => {
   return serie;
 };
 
-export const getHeroeDescription = (description) => {
+export const getHeroDescription = (description) => {
   if (!description) return "Esse Herói não possui nenhuma descrição :(";
 
   return description;

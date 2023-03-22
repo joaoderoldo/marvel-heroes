@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const HeroesHeading = styled.section`
+export const HeroHeading = styled.section`
   display: flex;
 
-  .heroe-picture {
+  .hero-picture {
     width: 300px;
     flex-shrink: 0;
 
@@ -15,7 +15,7 @@ export const HeroesHeading = styled.section`
     }
   }
 
-  .heroe-content {
+  .hero-content {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -27,14 +27,14 @@ export const HeroesHeading = styled.section`
     clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
     flex-grow: 1;
 
-    .heroe-name {
+    .hero-name {
       font-size: 2.25rem;
       margin: 0;
       color: var(--white, #fff);
       font-weight: 600;
     }
 
-    .heroe-about {
+    .hero-about {
       font-size: 0.875rem;
       color: var(--white, #fff);
       font-weight: 500;
@@ -54,7 +54,7 @@ export const HeroEvents = styled.section`
     font-weight: 600;
   }
 
-  .heroe-list {
+  .hero-list {
     margin-top: 16px;
     display: grid;
     grid-template-columns: repeat(auto-fill, 265px);
@@ -62,10 +62,10 @@ export const HeroEvents = styled.section`
     row-gap: 40px;
     justify-content: space-between;
 
-    .heroe-item {
+    .hero-item {
       max-width: 265px;
 
-      .heroe-picture {
+      .hero-picture {
         max-width: 265px;
         height: 265px;
         margin: 0 auto;
@@ -73,7 +73,7 @@ export const HeroEvents = styled.section`
         display: block;
       }
 
-      .heroe-content {
+      .hero-content {
         background-color: var(--black, #000);
         color: var(--white, #fff);
         padding: 16px;
@@ -82,12 +82,12 @@ export const HeroEvents = styled.section`
         flex-flow: column wrap;
         border-top: 2px solid var(--red, #ccc);
 
-        .heroe-name {
+        .hero-name {
           margin: 0;
           font-weight: 600;
         }
 
-        .heroe-about {
+        .hero-about {
           font-size: 0.8rem;
           line-height: 0.8rem;
           margin-top: auto;

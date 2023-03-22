@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 const Heroes = React.lazy(() => import("@/pages/Heroes/Heroes"));
-const Heroe = React.lazy(() => import("@/pages/Heroe/Heroe"));
+const Hero = React.lazy(() => import("@/pages/Hero/Hero"));
 const NotFound = React.lazy(() => import("@/pages/NotFound/NotFound"));
 
 const Routes = createBrowserRouter([
@@ -12,8 +12,8 @@ const Routes = createBrowserRouter([
     errorElement: <NotFound />,
   },
   {
-    path: "heroe/:heroeId",
-    element: <Heroe />,
+    path: "hero/:heroId",
+    element: <Hero />,
   },
 ]);
 
