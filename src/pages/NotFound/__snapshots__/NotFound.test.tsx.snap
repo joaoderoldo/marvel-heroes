@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NotFound > renders correctly 1`] = `
+<main
+  class="sc-beqWaB dxYkva"
+>
+  <img
+    alt="Pagina não Encontrada"
+    src="/src/assets/img/404.jpg"
+  />
+  <a
+    href="/"
+  >
+    Voltar
+  </a>
+</main>
+`;
