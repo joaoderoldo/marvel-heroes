@@ -6,24 +6,19 @@ import { getInitialLetters } from "@/utils";
 
 import { HeaderWrapper } from "./styles";
 
-const userInfo = {
-  name: "João Vitor",
-  subtitle: "Teste de Front-end",
-};
-
 const Header = () => {
   return (
-    <HeaderWrapper>
+    <HeaderWrapper test-id="header-component">
       <Container classes="header-container">
         <Link to="/">
-          <Logo />
+          <Logo test-id="logo-header-component" />
         </Link>
         <div className="user">
           <div className="user-content">
-            <span className="name">{userInfo.name}</span>
-            <div className="subtitle">{userInfo.subtitle}</div>
+            <span className="name">João Vitor</span>
+            <div className="subtitle">Teste de Front-end</div>
           </div>
-          <div className="user-avatar">{getInitialLetters(userInfo.name)}</div>
+          <div className="user-avatar">{getInitialLetters("João Vitor")}</div>
         </div>
       </Container>
     </HeaderWrapper>
